@@ -7,9 +7,21 @@ m(name)
         {block}
 
 .promotion-hero
+    display flex
+    flex-flow row
     width 100%
-    +e(img)
-        width 100%
+    justify-content space-between
+    +e(item)
+        background-color orange
+        text-align center
+        font-size 4em
+        padding 40px
+        +m(primary)
+            text-align center
+            font-size 4em
+            padding 40px 0
+            flex 1
+            background-color orange
 
 .promotion
     display flex
@@ -120,6 +132,9 @@ m(name)
         background-color #dddddd
 
 @media only screen and (max-width: 600px) and (min-width: 320px)
+    .promotion-hero
+        +e(item)
+            display none
     .promotion
         flex-flow column nowrap
         margin 20px
