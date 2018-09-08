@@ -1,0 +1,141 @@
+e(name)
+    &__{name}
+        {block}
+
+m(name)
+    &--{name}
+        {block}
+
+.promotion-hero
+    width 100%
+    +e(img)
+        width 100%
+
+.promotion
+    display flex
+    flex-flow row nowrap
+    margin 50px
+    +e(share)
+        position absolute
+        right 50px
+        margin 10px
+    +e(btn)
+        border-style none
+        background-color #3b5998
+        color #fff
+        padding 10px 20px
+        border-radius 2px
+        font-weight bold
+        &:hover
+            background-color #324b81
+            cursor pointer
+
+.promotion-content
+    margin 10px 20px
+    +e(title)
+        margin 0
+        color red
+
+.product
+    margin 0 50px
+    background-color #eaeaea
+    padding 30px
+    display flex
+    flex-flow row wrap
+    border 1px solid black
+    z-index 10
+    .product-item
+        border 1px solid black
+        background-color #fff
+        width calc(25% - 22px)
+        margin 10px
+        +e(img)
+            width 100%
+        +e(content)
+            padding 5px 20px
+            display flex
+            flex-flow column nowrap
+        +e(title)
+            margin 0
+        +e(price)
+            color orange
+        +e(btn)
+            border-style none
+            background-color orange
+            padding 10px 20px
+            border-radius 2px
+            font-weight bold
+            margin 10px 0
+            &:hover
+                background-color #e89200
+                cursor pointer
+            &:disabled
+                cursor no-drop
+                color black
+                background-color grey
+        +m(out)
+            border 1px solid black
+            background-color #fff
+            width calc(25% - 22px)
+            margin 10px
+            filter grayscale(100%)
+            +e(content)
+                padding 5px 20px
+                display flex
+                flex-flow column nowrap
+        +m(best)
+            border 1px solid red
+            background-color #fff
+            width calc(25% - 22px)
+            margin 10px
+            &:before
+                content 'Best Price'
+                display inline-block
+                position absolute
+                padding 10px
+                background-color red
+                color white
+                margin-bottom -50px
+.tab
+    display flex
+    flex-flow row nowrap
+    margin-left 70px
+    margin-bottom -2px
+.tab-item
+    background-color #cacaca
+    padding 10px 20px
+    border 1px solid black
+    border-bottom none
+    +m(selected)
+        background-color #eaeaea
+        padding 10px 20px
+        border 1px solid black
+        border-bottom 1px solid #eaeaea
+        z-index 100
+        &:hover
+            cursor pointer
+            background-color #dddddd
+    &:hover
+        cursor pointer
+        background-color #dddddd
+
+@media only screen and (max-width: 600px) and (min-width: 320px)
+    .promotion
+        flex-flow column nowrap
+        margin 20px
+        +e(share)
+            position inherit
+            margin 10px 0
+    .promotion-content
+        margin 10px 0
+    .tab
+        margin-left 0
+        justify-content center
+    .product
+        margin 0
+        .product-item
+            width calc(50% - 22px)
+            +m(out)
+                width calc(50% - 22px)
+            +m(best)
+                width calc(50% - 22px)
